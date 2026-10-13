@@ -1,0 +1,8 @@
+{
+  "_note": "launchApproved stays false until the organization gives written final authorization. While false, the production build is a noindex preview: robots.txt disallows all and no sitemap is emitted.",
+  "domain": "dnncstepstosuccess.com",
+  "canonicalHost": "dnncstepstosuccess.com",
+  "wwwBehavior": "redirect-to-apex",
+  "domainOwnershipVerified": false,
+  "launchApproved": false
+}

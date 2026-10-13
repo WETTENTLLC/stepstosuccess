@@ -1,0 +1,24 @@
+{
+    "_note":  "Submissions stay disabled until every approval is true AND the external endpoint passed a live test. Recipient addresses live inside the external form service, not in this public repo. Only public non-secret values belong here.",
+    "approvals":  {
+                      "recipientsApproved":  false,
+                      "privacyLanguageApproved":  false,
+                      "retentionPolicyApproved":  false,
+                      "serviceApproved":  false,
+                      "endpointTested":  false
+                  },
+    "retentionDays":  null,
+    "provider":  {
+                     "name":  null,
+                     "endpoints":  {
+                                       "contact":  "",
+                                       "scholarship":  "",
+                                       "volunteer":  "",
+                                       "senior":  "",
+                                       "corporate":  ""
+                                   },
+                     "honeypotName":  "website",
+                     "redirectField":  "",
+                     "nextUrl":  ""
+                 }
+}

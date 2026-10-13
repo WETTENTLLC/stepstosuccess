@@ -1,0 +1,26 @@
+{
+  "name": "dnnc-steps-to-success",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DNNC Steps to Success website rebuild",
+  "scripts": {
+    "build": "node build.js",
+    "start": "node build.js && node server.js",
+    "check": "node review/check.js",
+    "photos": "node review/photos.js",
+    "backup": "node review/backup.js",
+    "security": "node review/security.js",
+    "a11y": "node review/a11y.js",
+    "perf": "node review/perf.js",
+    "seo": "node review/seo.js",
+    "build:prod": "node review/build-prod.js",
+    "test:dist": "node review/dist.js",
+    "launch-gate": "node review/launch-gate.js",
+    "smoke": "node review/smoke.js"
+  },
+  "devDependencies": {
+    "axe-core": "^4.14.0",
+    "playwright-core": "^1.64.0",
+    "sharp": "^0.35.5"
+  }
+}

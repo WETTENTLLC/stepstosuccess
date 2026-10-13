@@ -1,0 +1,405 @@
+{
+  "hero-team": {
+    "alt": "Four smiling women in black aprons and tops, three of them embroidered with the Delane's Natural Nail Care logo, standing together outdoors in front of green foliage",
+    "focus": "50% 30%",
+    "status": "staging",
+    "files": [
+      {
+        "w": 640,
+        "h": 399,
+        "url": "/images/optimized/homepage/four-women-delanes-aprons-outdoors-640.webp",
+        "kb": 40
+      },
+      {
+        "w": 1280,
+        "h": 799,
+        "url": "/images/optimized/homepage/four-women-delanes-aprons-outdoors-1280.webp",
+        "kb": 104
+      },
+      {
+        "w": 1920,
+        "h": 1199,
+        "url": "/images/optimized/homepage/four-women-delanes-aprons-outdoors-1920.webp",
+        "kb": 184
+      }
+    ]
+  },
+  "story-pair": {
+    "alt": "Two women smiling close together in a garden, with the Delane's Natural Nail Care logo in the lower corner",
+    "focus": "50% 40%",
+    "status": "staging",
+    "files": [
+      {
+        "w": 640,
+        "h": 623,
+        "url": "/images/optimized/leadership/two-women-portrait-garden-640.webp",
+        "kb": 25
+      },
+      {
+        "w": 812,
+        "h": 791,
+        "url": "/images/optimized/leadership/two-women-portrait-garden-812.webp",
+        "kb": 33
+      }
+    ]
+  },
+  "story-group": {
+    "alt": "A large group of women, men and children posing together indoors; several wear yellow or black DNNC Steps to Success shirts",
+    "focus": "50% 40%",
+    "status": "staging",
+    "files": [
+      {
+        "w": 640,
+        "h": 640,
+        "url": "/images/optimized/leadership/community-group-photo-indoors-640.webp",
+        "kb": 64
+      },
+      {
+        "w": 665,
+        "h": 665,
+        "url": "/images/optimized/leadership/community-group-photo-indoors-665.webp",
+        "kb": 66
+      }
+    ]
+  },
+  "programs-training": {
+    "alt": "Two people in black clothing and face masks standing side by side in front of walls of nail polish bottles",
+    "focus": "50% 30%",
+    "status": "staging",
+    "files": [
+      {
+        "w": 640,
+        "h": 853,
+        "url": "/images/optimized/programs/nail-training-room-polish-wall-640.webp",
+        "kb": 73
+      },
+      {
+        "w": 1280,
+        "h": 1707,
+        "url": "/images/optimized/programs/nail-training-room-polish-wall-1280.webp",
+        "kb": 185
+      },
+      {
+        "w": 1536,
+        "h": 2048,
+        "url": "/images/optimized/programs/nail-training-room-polish-wall-1536.webp",
+        "kb": 231
+      }
+    ]
+  },
+  "impact-award-certificate": {
+    "alt": "A smiling woman in yellow holding a statuette and a navy folder with a U.S. Congress seal at a banquet",
+    "focus": "50% 30%",
+    "status": "staging",
+    "files": [
+      {
+        "w": 640,
+        "h": 775,
+        "url": "/images/optimized/success-stories/woman-holding-award-and-congressional-certificate-640.webp",
+        "kb": 55
+      },
+      {
+        "w": 1080,
+        "h": 1308,
+        "url": "/images/optimized/success-stories/woman-holding-award-and-congressional-certificate-1080.webp",
+        "kb": 103
+      }
+    ]
+  },
+  "impact-presenting": {
+    "alt": "A woman speaking into a microphone beside another woman holding a statuette and a navy folder",
+    "focus": "50% 30%",
+    "status": "staging",
+    "files": [
+      {
+        "w": 640,
+        "h": 775,
+        "url": "/images/optimized/success-stories/woman-speaking-beside-award-recipient-640.webp",
+        "kb": 32
+      },
+      {
+        "w": 1080,
+        "h": 1308,
+        "url": "/images/optimized/success-stories/woman-speaking-beside-award-recipient-1080.webp",
+        "kb": 60
+      }
+    ]
+  },
+  "impact-gifts-awards": {
+    "alt": "Two photographs: women posing with gift bags and a boxed laptop above, and five women posing with three holding statuettes below",
+    "focus": "50% 20%",
+    "status": "staging",
+    "files": [
+      {
+        "w": 640,
+        "h": 800,
+        "url": "/images/optimized/success-stories/gift-presentation-and-award-recipients-collage-640.webp",
+        "kb": 57
+      },
+      {
+        "w": 1280,
+        "h": 1600,
+        "url": "/images/optimized/success-stories/gift-presentation-and-award-recipients-collage-1280.webp",
+        "kb": 122
+      },
+      {
+        "w": 1440,
+        "h": 1800,
+        "url": "/images/optimized/success-stories/gift-presentation-and-award-recipients-collage-1440.webp",
+        "kb": 143
+      }
+    ]
+  },
+  "impact-community-giveaway": {
+    "alt": "Women and children gathered indoors looking through donated clothing, with one woman in a blue knit cap holding a yellow garment",
+    "focus": "60% 40%",
+    "status": "staging",
+    "files": [
+      {
+        "w": 640,
+        "h": 426,
+        "url": "/images/optimized/success-stories/participants-sorting-donated-clothing-640.webp",
+        "kb": 40
+      },
+      {
+        "w": 1000,
+        "h": 665,
+        "url": "/images/optimized/success-stories/participants-sorting-donated-clothing-1000.webp",
+        "kb": 74
+      }
+    ]
+  },
+  "impact-celebration": {
+    "alt": "A woman in a white dress smiling and pressing her hands together while guests around her applaud",
+    "focus": "45% 40%",
+    "status": "staging",
+    "files": [
+      {
+        "w": 640,
+        "h": 414,
+        "url": "/images/optimized/success-stories/guests-applauding-woman-at-celebration-640.webp",
+        "kb": 22
+      },
+      {
+        "w": 896,
+        "h": 579,
+        "url": "/images/optimized/success-stories/guests-applauding-woman-at-celebration-896.webp",
+        "kb": 32
+      }
+    ]
+  },
+  "impact-vehicle": {
+    "alt": "A woman holding a toddler and covering her eyes beside a white vehicle topped with a large red bow",
+    "focus": "60% 45%",
+    "status": "staging",
+    "files": [
+      {
+        "w": 640,
+        "h": 420,
+        "url": "/images/optimized/success-stories/mother-with-child-beside-gifted-vehicle-640.webp",
+        "kb": 26
+      },
+      {
+        "w": 895,
+        "h": 587,
+        "url": "/images/optimized/success-stories/mother-with-child-beside-gifted-vehicle-895.webp",
+        "kb": 38
+      }
+    ]
+  },
+  "senior-gift-bag": {
+    "alt": "A smiling older woman with a name tag holding a red tote and a white gift bag at an indoor community event",
+    "focus": "50% 30%",
+    "status": "staging",
+    "files": [
+      {
+        "w": 640,
+        "h": 960,
+        "url": "/images/optimized/senior-moments/woman-with-gift-bags-at-community-event-640.webp",
+        "kb": 51
+      },
+      {
+        "w": 1280,
+        "h": 1920,
+        "url": "/images/optimized/senior-moments/woman-with-gift-bags-at-community-event-1280.webp",
+        "kb": 144
+      },
+      {
+        "w": 1365,
+        "h": 2048,
+        "url": "/images/optimized/senior-moments/woman-with-gift-bags-at-community-event-1365.webp",
+        "kb": 161
+      }
+    ]
+  },
+  "senior-stage": {
+    "alt": "Two women seated on a wooden stage in front of a brick wall, one speaking into a microphone while the other listens",
+    "focus": "50% 50%",
+    "status": "staging",
+    "files": [
+      {
+        "w": 640,
+        "h": 426,
+        "url": "/images/optimized/senior-moments/two-women-in-conversation-on-stage-640.webp",
+        "kb": 35
+      },
+      {
+        "w": 1280,
+        "h": 853,
+        "url": "/images/optimized/senior-moments/two-women-in-conversation-on-stage-1280.webp",
+        "kb": 102
+      },
+      {
+        "w": 1920,
+        "h": 1280,
+        "url": "/images/optimized/senior-moments/two-women-in-conversation-on-stage-1920.webp",
+        "kb": 171
+      }
+    ]
+  },
+  "senior-holiday-group": {
+    "alt": "Five smiling adults and a teenager in holiday hats posing together outside a building with a teal awning reading Rose Gate",
+    "focus": "50% 45%",
+    "status": "staging",
+    "files": [
+      {
+        "w": 640,
+        "h": 480,
+        "url": "/images/optimized/senior-moments/holiday-gathering-outside-rose-gate-640.webp",
+        "kb": 39
+      },
+      {
+        "w": 960,
+        "h": 720,
+        "url": "/images/optimized/senior-moments/holiday-gathering-outside-rose-gate-960.webp",
+        "kb": 68
+      }
+    ]
+  },
+  "senior-gift-exchange": {
+    "alt": "A woman in a Santa hat handing a wrapped gift to a smiling older woman in a blue jacket",
+    "focus": "50% 45%",
+    "status": "staging",
+    "files": [
+      {
+        "w": 640,
+        "h": 360,
+        "url": "/images/optimized/senior-moments/two-women-sharing-wrapped-gift-640.webp",
+        "kb": 30
+      },
+      {
+        "w": 960,
+        "h": 540,
+        "url": "/images/optimized/senior-moments/two-women-sharing-wrapped-gift-960.webp",
+        "kb": 54
+      }
+    ]
+  },
+  "senior-dinner": {
+    "alt": "Three smiling women seated close together at a banquet table, with other guests in the background",
+    "focus": "55% 50%",
+    "status": "staging",
+    "files": [
+      {
+        "w": 640,
+        "h": 427,
+        "url": "/images/optimized/senior-moments/women-at-banquet-table-640.webp",
+        "kb": 41
+      },
+      {
+        "w": 960,
+        "h": 640,
+        "url": "/images/optimized/senior-moments/women-at-banquet-table-960.webp",
+        "kb": 74
+      }
+    ]
+  },
+  "partners-warriors": {
+    "alt": "A woman in a Warriors beanie and a yellow Steps to Success shirt posing with a woman in a tan leather jacket at a community event",
+    "focus": "50% 35%",
+    "status": "staging",
+    "files": [
+      {
+        "w": 640,
+        "h": 497,
+        "url": "/images/optimized/partners/two-women-posing-at-community-event-640.webp",
+        "kb": 42
+      },
+      {
+        "w": 1000,
+        "h": 777,
+        "url": "/images/optimized/partners/two-women-posing-at-community-event-1000.webp",
+        "kb": 88
+      }
+    ]
+  },
+  "partners-banner-woman": {
+    "alt": "A smiling woman in a black dress standing beside a Delane's Natural Nail Care banner showing hands and feet",
+    "focus": "50% 30%",
+    "status": "staging",
+    "files": [
+      {
+        "w": 640,
+        "h": 800,
+        "url": "/images/optimized/partners/woman-beside-delanes-banner-640.webp",
+        "kb": 30
+      },
+      {
+        "w": 1280,
+        "h": 1599,
+        "url": "/images/optimized/partners/woman-beside-delanes-banner-1280.webp",
+        "kb": 68
+      },
+      {
+        "w": 1440,
+        "h": 1799,
+        "url": "/images/optimized/partners/woman-beside-delanes-banner-1440.webp",
+        "kb": 81
+      }
+    ]
+  },
+  "partners-selfie": {
+    "alt": "Three smiling women taking a close selfie in a crowded auditorium",
+    "focus": "50% 40%",
+    "status": "staging",
+    "files": [
+      {
+        "w": 640,
+        "h": 640,
+        "url": "/images/optimized/partners/three-women-selfie-at-event-640.webp",
+        "kb": 49
+      },
+      {
+        "w": 1280,
+        "h": 1280,
+        "url": "/images/optimized/partners/three-women-selfie-at-event-1280.webp",
+        "kb": 108
+      },
+      {
+        "w": 1440,
+        "h": 1440,
+        "url": "/images/optimized/partners/three-women-selfie-at-event-1440.webp",
+        "kb": 126
+      }
+    ]
+  },
+  "partners-backdrop": {
+    "alt": "Five women in professional and evening attire posing in front of a Steps to Success step-and-repeat backdrop",
+    "focus": "50% 45%",
+    "status": "staging",
+    "files": [
+      {
+        "w": 640,
+        "h": 427,
+        "url": "/images/optimized/partners/five-women-in-front-of-steps-to-success-backdrop-640.webp",
+        "kb": 34
+      },
+      {
+        "w": 960,
+        "h": 640,
+        "url": "/images/optimized/partners/five-women-in-front-of-steps-to-success-backdrop-960.webp",
+        "kb": 66
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+node_modules/
+.env
+.env.*
+*.log
+.DS_Store
+data/
+backups/
+review/screenshots/
+
+# Private photo archive and permission notes: keep local/private, never in the public repo
+assets/originals/
+assets/photos.json
+public/images/*
+!public/images/optimized/
+
+# Build output
+dist/

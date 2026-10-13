@@ -1,0 +1,17 @@
+{
+  "_note": "Legacy URL plan for dnncstepstosuccess.com (WordPress). Only entries with active:true are applied. The old site blocks automated fetches (HTTP 403), so entries marked verified:false are guesses and must be confirmed against the old site's own page list or Google Search Console before launch.",
+  "redirects": [
+    { "from": "/program-activites/", "to": "/programs/", "status": 301, "active": true, "verified": true, "source": "Search result title: 'Program and Activities'" },
+    { "from": "/about/", "to": "/our-story/", "status": 301, "active": false, "verified": false },
+    { "from": "/about-us/", "to": "/our-story/", "status": 301, "active": false, "verified": false },
+    { "from": "/contact-us/", "to": "/contact/", "status": 301, "active": false, "verified": false },
+    { "from": "/donate-2/", "to": "/donate/", "status": 301, "active": false, "verified": false },
+    { "from": "/get-involved-2/", "to": "/get-involved/", "status": 301, "active": false, "verified": false },
+    { "from": "/wp-login.php", "to": null, "status": 410, "active": true, "verified": true, "note": "Old WordPress admin endpoints must not exist on the new site." },
+    { "from": "/xmlrpc.php", "to": null, "status": 410, "active": true, "verified": true },
+    { "from": "/wp-admin/", "to": null, "status": 410, "active": true, "verified": true, "prefix": true },
+    { "from": "/wp-content/", "to": null, "status": 410, "active": true, "verified": true, "prefix": true },
+    { "from": "/wp-includes/", "to": null, "status": 410, "active": true, "verified": true, "prefix": true },
+    { "from": "/wp-json/", "to": null, "status": 410, "active": true, "verified": true, "prefix": true }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "_note": "Online giving stays disabled until the organization verifies legal identity, tax-exempt or fiscal-sponsor status, payment recipient and receipt requirements, and chooses a hosted payment processor. Card data must only ever be entered on the processor's hosted page.",
+  "enabled": false,
+  "approvals": {
+    "legalIdentityVerified": false,
+    "taxStatusOrFiscalSponsorVerified": false,
+    "paymentRecipientVerified": false,
+    "receiptLanguageApproved": false
+  },
+  "processor": null,
+  "checkoutUrls": { "oneTime": "", "monthly": "" },
+  "amountParam": "",
+  "suggestedAmounts": [25, 50, 100, 250],
+  "maxAmount": 25000
+}

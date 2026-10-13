@@ -21,7 +21,7 @@ Repository: https://github.com/WETTENTLLC/stepstosuccess
 One-time GitHub setup: Settings > Pages > Source = GitHub Actions. Settings > Environments > `github-pages` > add required reviewers. Enable branch protection on `main`.
 
 ## Forms (external service)
-The Node handlers cannot run on Pages. The five forms render as plain HTML POST forms (`method=post`, `action` = approved endpoint), with the honeypot field, accessible labels, consent text and client-side validation in `public/js/forms.js`.
+The Node handlers cannot run on Pages. The four forms render as plain HTML POST forms (`method=post`, `action` = approved endpoint), with the honeypot field, accessible labels, consent text and client-side validation in `public/js/forms.js`.
 They are **disabled** (button disabled, "not yet available" notice) until all of `config/forms.json` `approvals` are true and `provider.endpoints.<form>` holds an `https://` URL. Recipient addresses are configured inside the external service, never in this repo. Candidate services: Formspree, Basin, Web3Forms, or your own serverless endpoint. Use the service's own spam protection (and CAPTCHA if desired; add its origin to the CSP in `build.js`). Test every form end to end before setting `endpointTested`.
 
 ## Donations (external platform)
@@ -39,7 +39,7 @@ They are **disabled** (button disabled, "not yet available" notice) until all of
 
 ## SEO migration
 - Pages cannot send 301/410. Verified legacy URLs become static stub pages (meta refresh + canonical to the target). Currently confirmed: `/program-activites/` -> `/programs/`.
-- Five guessed legacy URLs in `config/redirects.json` stay inactive until confirmed (old-site page list, Search Console, or the Wayback Machine). Do not redirect unknown URLs to the homepage.
+- Legacy URLs in `config/redirects.json` are limited to paths confirmed in the Wayback Machine; unconfirmed guesses were removed. Do not redirect unknown URLs to the homepage.
 - Old WordPress paths (`/wp-login.php`, `/wp-admin/`, `/xmlrpc.php`, `/wp-content/`, ...) return 404 on Pages instead of 410.
 - If true 301s are needed, put Cloudflare (or similar) in front and add redirect rules.
 - Set `launchApproved: true` only at launch: this removes `noindex`, publishes the production `robots.txt` and `sitemap.xml`, and adds `CNAME`. Then add the property in Search Console and submit the sitemap. Add analytics only after the privacy policy is approved.

@@ -23,8 +23,7 @@ const NAV = [
   ['home', '/', 'Home'],
   ['our-story', '/our-story/', 'Our Story'],
   ['programs', '/programs/', 'Programs'],
-  ['senior-moments', '/senior-moments/', 'Senior Moments'],
-  ['impact', '/impact/', 'Impact'],
+    ['impact', '/impact/', 'Impact'],
   ['get-involved', '/get-involved/', 'Get Involved'],
   ['partners', '/partners/', 'Partners'],
   ['contact', '/contact/', 'Contact'],
@@ -69,8 +68,9 @@ for (const file of fs.readdirSync(path.join(SRC, 'pages'))) {
     '@context': 'https://schema.org', '@type': 'NGO', name: 'DNNC Steps to Success', alternateName: "Delane's Natural Nail Care: Steps to Success",
     url: SITE + '/', logo: SITE + '/img/logo.png', founder: { '@type': 'Person', name: 'Delane Sims' },
     description: 'Vocational training scholarships, mentorship and support for women and single parents.',
-    address: { '@type': 'PostalAddress', addressLocality: 'San Leandro', addressRegion: 'CA', addressCountry: 'US' },
-  }; // VERIFY before launch: legal name, address, founder title, nonprofit status; add telephone, email, sameAs, taxID only once approved
+    email: 'delane@delanesnails.com',
+  address: { '@type': 'PostalAddress', streetAddress: '333 Estudillo Ave, Suite 204', addressLocality: 'San Leandro', addressRegion: 'CA', postalCode: '94577', addressCountry: 'US' },
+  }; // Address and email confirmed by the organization. VERIFY before launch: legal name, founder title; add telephone, sameAs, taxID only once approved
   const parent = meta.slug.includes('/') ? NAV.find(n => n[0] === meta.slug.split('/')[0]) : null;
   const trail = [['Home', '/'], ...(parent ? [[parent[2], parent[1]]] : []), [meta.title.split(' | ')[0], url]];
   const crumbs = meta.slug === 'home' ? null : {

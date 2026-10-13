@@ -16,7 +16,7 @@ Status: **UNPUBLISHED STAGING.** All pages are `noindex`, forms are disabled, do
 | 8 | Data-retention period and deletion procedure | Forms | `config/forms.json` `retentionDays` |
 | 9 | Response-time wording for the thank-you page | Forms | `src/pages/form-thanks.html` |
 | 10 | Scholarship eligibility, dates, whether applications are open | Programs, Contact | `programs.html`, `contact.html` |
-| 11 | Senior Moments details (what, where, when, cost, phone line) | Senior Moments | `senior-moments.html` |
+| 11 | Exact Senior Moments URL on delanesnails.com, if the organization wants a link from the founder bio (no destination is linked today) | Our Story | `our-story.html` |
 | 12 | Volunteer roles and any screening requirements | Volunteer form | `form-volunteer.html` |
 | 13 | Corporate sponsorship options and recognition benefits | Partners | `partners.html` |
 | 14 | Delane Sims bio, title and quote; Myeshia Jefferson title | Our Story, Home | `our-story.html`, `home.html` |

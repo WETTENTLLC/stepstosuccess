@@ -22,7 +22,7 @@ const shot = async (page, file) => {
   const test = serve(3211, { FORMS_MODE: 'test', FORM_MIN_AGE_MS: '0' });
   await new Promise(r => setTimeout(r, 2000));
   const browser = await chromium.launch({ channel: process.env.BROWSER_CHANNEL || 'msedge' });
-  const forms = ['message', 'scholarship-inquiry', 'volunteer', 'senior-outreach', 'corporate'];
+  const forms = ['message', 'scholarship-inquiry', 'volunteer', 'corporate'];
   for (const w of [375, 1440]) {
     const ctx = await browser.newContext({ viewport: { width: w, height: 900 }, reducedMotion: 'reduce' });
     const page = await ctx.newPage();

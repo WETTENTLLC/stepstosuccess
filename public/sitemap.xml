@@ -6,7 +6,6 @@
   <url><loc>https://example.org/contact/corporate/</loc></url>
   <url><loc>https://example.org/contact/message/</loc></url>
   <url><loc>https://example.org/contact/scholarship-inquiry/</loc></url>
-  <url><loc>https://example.org/contact/senior-outreach/</loc></url>
   <url><loc>https://example.org/contact/volunteer/</loc></url>
   <url><loc>https://example.org/donate/</loc></url>
   <url><loc>https://example.org/get-involved/</loc></url>
@@ -15,5 +14,4 @@
   <url><loc>https://example.org/partners/</loc></url>
   <url><loc>https://example.org/privacy/</loc></url>
   <url><loc>https://example.org/programs/</loc></url>
-  <url><loc>https://example.org/senior-moments/</loc></url>
 </urlset>

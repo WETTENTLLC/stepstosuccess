@@ -5,7 +5,7 @@ const { spawn } = require('child_process');
 const path = require('path');
 const ROOT = path.join(__dirname, '..');
 const BASE = 'http://127.0.0.1:3201';
-const PAGES = ['/', '/our-story/', '/programs/', '/senior-moments/', '/impact/', '/get-involved/', '/donate/', '/partners/', '/contact/', '/contact/scholarship-inquiry/'];
+const PAGES = ['/', '/our-story/', '/programs/', '/impact/', '/get-involved/', '/donate/', '/partners/', '/contact/', '/contact/scholarship-inquiry/'];
 // Google "good" thresholds
 const LIM = { lcp: 2500, cls: 0.1, tbt: 200, kb: 1500 };
 let fails = 0;

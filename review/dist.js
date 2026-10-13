@@ -9,8 +9,8 @@ const ROOT = path.join(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
 const axeSrc = fs.readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
 const PORT = 4010, BASE = `http://127.0.0.1:${PORT}`;
-const PAGES = ['/', '/our-story/', '/programs/', '/senior-moments/', '/impact/', '/get-involved/', '/donate/', '/partners/', '/contact/',
-  '/contact/message/', '/contact/scholarship-inquiry/', '/contact/volunteer/', '/contact/senior-outreach/', '/contact/corporate/', '/contact/thanks/', '/privacy/', '/accessibility/'];
+const PAGES = ['/', '/our-story/', '/programs/', '/impact/', '/get-involved/', '/donate/', '/partners/', '/contact/',
+  '/contact/message/', '/contact/scholarship-inquiry/', '/contact/volunteer/', '/contact/corporate/', '/contact/thanks/', '/privacy/', '/accessibility/'];
 let fails = 0, passes = 0;
 const ok = (c, m) => { c ? passes++ : fails++; if (!c || process.env.VERBOSE) console.log((c ? 'PASS ' : 'FAIL ') + m); };
 const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-practice'];

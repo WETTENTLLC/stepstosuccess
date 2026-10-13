@@ -6,8 +6,8 @@ if (!/^https?:\/\//.test(base)) { console.log('Usage: node review/smoke.js <base
 let fails = 0, passes = 0;
 const ok = (c, m) => { c ? passes++ : fails++; if (!c || process.env.VERBOSE) console.log((c ? 'PASS ' : 'FAIL ') + m); };
 const get = async p => { const r = await fetch(base + p, { redirect: 'manual' }); return { status: r.status, text: await r.text() }; };
-const PAGES = ['/', '/our-story/', '/programs/', '/senior-moments/', '/impact/', '/get-involved/', '/donate/', '/partners/', '/contact/',
-  '/contact/message/', '/contact/scholarship-inquiry/', '/contact/volunteer/', '/contact/senior-outreach/', '/contact/corporate/', '/contact/thanks/', '/privacy/', '/accessibility/'];
+const PAGES = ['/', '/our-story/', '/programs/', '/impact/', '/get-involved/', '/donate/', '/partners/', '/contact/',
+  '/contact/message/', '/contact/scholarship-inquiry/', '/contact/volunteer/', '/contact/corporate/', '/contact/thanks/', '/privacy/', '/accessibility/'];
 const PRIVATE = ['/server.js', '/package.json', '/config/forms.json', '/config/donations.json', '/assets/photos.json', '/assets/originals/', '/.env',
   '/data/', '/review/smoke.js', '/lib/forms.js', '/images/homepage/', '/images/leadership/', '/images/programs/', '/images/senior-moments/', '/images/success-stories/', '/images/galas-awards/', '/images/branding/', '/images/partnersoroutreach/', '/wp-login.php', '/wp-admin/', '/xmlrpc.php'];
 

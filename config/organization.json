@@ -1,0 +1,13 @@
+{
+  "_note": "Organization identity used by the build (footer, Contact, Donate, structured data). EIN and 501(c)(3) status are owner-confirmed but NOT yet verified against IRS records. While irsVerified is false the site shows a VERIFY badge, omits taxID/nonprofitStatus from structured data and makes no tax-deductibility claim.",
+  "legalName": "DNNC Steps to Success",
+  "displayName": "DNNC Steps to Success",
+  "ein": "84-4849258",
+  "classification": "501(c)(3) nonprofit organization",
+  "classificationSource": "owner-confirmed",
+  "irsVerified": false,
+  "irsVerifiedOn": null,
+  "taxDeductibilityStatement": "",
+  "address": { "street": "333 Estudillo Ave, Suite 204", "city": "San Leandro", "region": "CA", "postalCode": "94577", "country": "US" },
+  "email": "delane@delanesnails.com"
+}

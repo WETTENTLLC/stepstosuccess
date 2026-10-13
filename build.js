@@ -5,6 +5,8 @@ const path = require('path');
 const { FORMS, renderForm, formsConfig } = require('./lib/forms');
 const { renderDonateForm, renderStaticDonate } = require('./lib/donate');
 const site = require('./config/site.json');
+const orgCfg = require('./config/organization.json');
+const { donationsReady, config: donationCfg } = require('./lib/donate');
 const redirectsConfig = require('./config/redirects.json');
 const PROD = process.env.BUILD_TARGET === 'production';
 const SRC = path.join(__dirname, 'src');
@@ -46,6 +48,17 @@ const photo = spec => {
   return `<div class="photo-frame photo-frame--img"><picture><source type="image/webp" srcset="${srcset}" sizes="${o.sizes || '(min-width: 56rem) 45vw, 100vw'}"><img src="${big.url}" width="${big.w}" height="${big.h}" alt="${esc(alt)}" style="object-position:${p.focus}"${eager ? ' fetchpriority="high"' : ' loading="lazy"'} decoding="async"></picture></div>`;
 };
 
+// Organization tokens. Tax statements appear only after IRS verification AND approved receipt language.
+const a = orgCfg.address;
+const taxClaimsOk = orgCfg.irsVerified === true && donationCfg.approvals.receiptLanguageApproved === true && !!orgCfg.taxDeductibilityStatement;
+const orgTokens = {
+  'org-footer': `${esc(orgCfg.displayName)} is a ${esc(orgCfg.classification)}. EIN ${esc(orgCfg.ein)}.${orgCfg.irsVerified ? '' : ' <span class="draft">VERIFY</span> EIN and tax-exempt status are owner-confirmed and pending IRS verification.'}`,
+  'org-details': `<li><strong>Organization:</strong> ${esc(orgCfg.legalName)}, ${esc(orgCfg.classification)}</li>\n            <li><strong>EIN:</strong> ${esc(orgCfg.ein)}${orgCfg.irsVerified ? '' : ' <span class="draft">VERIFY</span>'}</li>`,
+  'org-tax': taxClaimsOk ? `<p>${esc(orgCfg.taxDeductibilityStatement)}</p>` : '<p class="draft-note"><span class="draft">VERIFY</span> Tax-deductibility wording will be added only after the legal name, EIN and current tax-exempt status are confirmed in IRS records. Until then, please do not treat a gift as tax-deductible.</p>',
+  'org-receipts': donationsReady() ? '<p>Your receipt is emailed by our payment provider after each gift.</p>' : '<p>Gift confirmations and receipts will be sent by our payment provider. <span class="draft">CONFIRM</span> Receipt wording is pending approval.</p>',
+};
+const applyOrg = s => s.replace(/\{\{(org-footer|org-details|org-tax|org-receipts)\}\}/g, (_, k) => orgTokens[k]);
+
 const pages = [];
 for (const file of fs.readdirSync(path.join(SRC, 'pages'))) {
   if (!file.endsWith('.html') || file.startsWith('_')) continue;
@@ -68,9 +81,12 @@ for (const file of fs.readdirSync(path.join(SRC, 'pages'))) {
     '@context': 'https://schema.org', '@type': 'NGO', name: 'DNNC Steps to Success', alternateName: "Delane's Natural Nail Care: Steps to Success",
     url: SITE + '/', logo: SITE + '/img/logo.png', founder: { '@type': 'Person', name: 'Delane Sims' },
     description: 'Vocational training scholarships, mentorship and support for women and single parents.',
-    email: 'delane@delanesnails.com',
-  address: { '@type': 'PostalAddress', streetAddress: '333 Estudillo Ave, Suite 204', addressLocality: 'San Leandro', addressRegion: 'CA', postalCode: '94577', addressCountry: 'US' },
-  }; // Address and email confirmed by the organization. VERIFY before launch: legal name, founder title; add telephone, sameAs, taxID only once approved
+    email: orgCfg.email,
+    address: { '@type': 'PostalAddress', streetAddress: a.street, addressLocality: a.city, addressRegion: a.region, postalCode: a.postalCode, addressCountry: a.country },
+  };
+  // taxID and nonprofitStatus are published only after IRS verification of the EIN and status.
+  if (orgCfg.irsVerified === true) { org.legalName = orgCfg.legalName; org.taxID = orgCfg.ein; org.nonprofitStatus = 'Nonprofit501c3'; }
+  // VERIFY before launch: founder title; add telephone and sameAs only once approved
   const parent = meta.slug.includes('/') ? NAV.find(n => n[0] === meta.slug.split('/')[0]) : null;
   const trail = [['Home', '/'], ...(parent ? [[parent[2], parent[1]]] : []), [meta.title.split(' | ')[0], url]];
   const crumbs = meta.slug === 'home' ? null : {
@@ -80,7 +96,7 @@ for (const file of fs.readdirSync(path.join(SRC, 'pages'))) {
     .map(o => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`).join('\n  ');
 
   const sub = { title: esc(meta.title), description: esc(meta.description), canonical: SITE + url, siteurl: SITE, nav, donateCurrent, jsonld, robots: robotsTag, csp: cspTag, content: body };
-    const html = layout.replace(/\{\{(title|description|canonical|siteurl|nav|donateCurrent|jsonld|robots|csp|content)\}\}/g, (_, k) => sub[k]);
+    const html = applyOrg(layout.replace(/\{\{(title|description|canonical|siteurl|nav|donateCurrent|jsonld|robots|csp|content)\}\}/g, (_, k) => sub[k]));
 
   if (meta.sitemap !== false) pages.push(url);
   const dest = meta.slug === 'home' ? path.join(OUT, 'index.html') : path.join(OUT, meta.slug, 'index.html');

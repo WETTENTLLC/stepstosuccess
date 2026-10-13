@@ -38,7 +38,7 @@ for (const [url, h] of pages) {
     if (j['@type'] === 'BreadcrumbList') ok(j.itemListElement.every((x, i) => x.position === i + 1 && x.name && x.item.startsWith(SITE)), `breadcrumb positions/names/items ${url}`);
     if (j['@type'] === 'NGO') {
       ok(j.name && j.url && j.logo, 'Organization has name/url/logo');
-      ok(!j.telephone && !j.taxID, 'Organization JSON-LD omits unverified phone/EIN');
+      ok(!j.telephone && !j.taxID && !j.nonprofitStatus, 'Organization JSON-LD omits unverified phone/EIN/nonprofit status');
       ok(j.email === 'delane@delanesnails.com' && j.address && j.address.streetAddress === '333 Estudillo Ave, Suite 204' && j.address.postalCode === '94577', 'Organization JSON-LD has confirmed address and email');
     }
   }

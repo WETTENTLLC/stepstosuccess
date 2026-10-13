@@ -16,6 +16,9 @@ for (const [k, v] of Object.entries(forms.provider.endpoints)) if (!/^https:\/\/
 if (forms.retentionDays == null) block('Forms: data-retention period not set');
 for (const [k, v] of Object.entries(don.approvals)) if (!v) block(`Donations: ${k} is not verified`);
 if (!don.enabled || !/^https:\/\//.test(don.checkoutUrls.oneTime) || !/^https:\/\//.test(don.checkoutUrls.monthly)) block('Donations: hosted checkout URLs not configured/enabled');
+const org = j('config/organization.json');
+if (!org.irsVerified) block('Organization: legal name, EIN ' + org.ein + ' and 501(c)(3) status not verified against IRS records (config/organization.json irsVerified)');
+if (!org.taxDeductibilityStatement) block('Donations: approved tax-deductibility statement not set (config/organization.json)');
 const unverified = j('config/redirects.json').redirects.filter(r => !r.active && r.status === 301);
 if (unverified.length) block(`Redirects: ${unverified.length} legacy URL guesses are unconfirmed (${unverified.map(r => r.from).join(', ')}); confirm in Search Console or the old site`);
 

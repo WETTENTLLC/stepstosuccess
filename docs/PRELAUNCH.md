@@ -80,3 +80,6 @@ Only `/program-activites/` to `/programs/` is verified and active. Candidate gue
 
 ## D. What automated tests do not cover
 No manual assistive-technology testing has been performed yet. Lab performance numbers are not field Core Web Vitals. Automated accessibility tools catch only part of WCAG issues. Security review by a third party is recommended before accepting real data or payments.
+
+| 17 | Verify legal name, EIN 84-4849258 and 501(c)(3) status in IRS records (TEOS / Pub. 78), then set irsVerified, taxDeductibilityStatement in config/organization.json. ProPublica's IRS-based index had no record of this EIN on 2026-10-13 (may be lag). | Footer, Donate, structured data | config/organization.json |
+| 18 | Choose donation provider; set checkout URLs, enable recurring and provider-managed receipts, then approve receipt language | Donate | config/donations.json |

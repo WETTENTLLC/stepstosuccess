@@ -307,3 +307,7 @@ img, svg { max-width: 100%; display: block; }
 .btn--disabled, .btn[disabled] { background: #e9e5da; color: #3d4a54; border: 2px dashed #6b7780; cursor: not-allowed; transform: none; box-shadow: none; }
 .btn--disabled:hover, .btn[disabled]:hover { background: #e9e5da; color: #3d4a54; transform: none; }
 .notice-box--off { border-color: var(--gold-dark); background: #fff8e3; margin-block: 1rem; }
+
+/* Long emails/EINs must wrap at 320px with text-spacing overrides */
+.fact-list li, .notice-box, .site-footer address, .site-footer p, .form-wrap, .form-wrap > * { overflow-wrap: anywhere; min-width: 0; }
+.split > * { min-width: 0; }

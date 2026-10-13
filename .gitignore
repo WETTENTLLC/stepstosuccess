@@ -15,3 +15,6 @@ public/images/*
 
 # Build output
 dist/
+
+# Third-party archive research (private)
+research/

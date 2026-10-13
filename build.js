@@ -117,7 +117,8 @@ if (!PROD) {
   for (const r of redirectsConfig.redirects) {
     if (!r.active || !r.verified || r.status !== 301 || !r.to || r.prefix) continue;
     const target = SITE + r.to;
-    const dest = path.join(OUT, r.from.replace(/^\/|\/$/g, ''), 'index.html');
+    const rel = r.from.replace(/^\/|\/$/g, '');
+    const dest = /\.html$/.test(rel) ? path.join(OUT, rel) : path.join(OUT, rel, 'index.html');
     fs.mkdirSync(path.dirname(dest), { recursive: true });
     fs.writeFileSync(dest, `<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><title>Page moved | DNNC Steps to Success</title>\n<link rel="canonical" href="${target}">\n<meta http-equiv="refresh" content="0; url=${r.to}">\n<meta name="viewport" content="width=device-width, initial-scale=1"></head>\n<body><p>This page has moved. <a href="${r.to}">Continue to the new page</a>.</p></body></html>\n`);
     stubs++;

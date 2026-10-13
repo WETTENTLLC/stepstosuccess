@@ -1,17 +1,132 @@
 {
-  "_note": "Legacy URL plan for dnncstepstosuccess.com (WordPress). Only entries with active:true are applied. The old site blocks automated fetches (HTTP 403), so entries marked verified:false are guesses and must be confirmed against the old site's own page list or Google Search Console before launch.",
+  "_note": "Legacy URL plan for dnncstepstosuccess.com. Active 301 entries are confirmed to exist in Wayback captures (see research/wayback/redirect-map.csv); targets are mapped by DNNC, pending org approval at launch. GitHub Pages implements these as static meta-refresh stubs; true HTTP 301s need an external edge/CDN. Unconfirmed guesses were removed (never found in the archive).",
   "redirects": [
-    { "from": "/program-activites/", "to": "/programs/", "status": 301, "active": true, "verified": true, "source": "Search result title: 'Program and Activities'" },
-    { "from": "/about/", "to": "/our-story/", "status": 301, "active": false, "verified": false },
-    { "from": "/about-us/", "to": "/our-story/", "status": 301, "active": false, "verified": false },
-    { "from": "/contact-us/", "to": "/contact/", "status": 301, "active": false, "verified": false },
-    { "from": "/donate-2/", "to": "/donate/", "status": 301, "active": false, "verified": false },
-    { "from": "/get-involved-2/", "to": "/get-involved/", "status": 301, "active": false, "verified": false },
-    { "from": "/wp-login.php", "to": null, "status": 410, "active": true, "verified": true, "note": "Old WordPress admin endpoints must not exist on the new site." },
-    { "from": "/xmlrpc.php", "to": null, "status": 410, "active": true, "verified": true },
-    { "from": "/wp-admin/", "to": null, "status": 410, "active": true, "verified": true, "prefix": true },
-    { "from": "/wp-content/", "to": null, "status": 410, "active": true, "verified": true, "prefix": true },
-    { "from": "/wp-includes/", "to": null, "status": 410, "active": true, "verified": true, "prefix": true },
-    { "from": "/wp-json/", "to": null, "status": 410, "active": true, "verified": true, "prefix": true }
+    {
+      "from": "/about.html",
+      "to": "/our-story/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20190309035018 (http://www.dnncstepstosuccess.com/about.html); target mapping pending org approval"
+    },
+    {
+      "from": "/about-us/",
+      "to": "/our-story/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20230921174329 (https://dnncstepstosuccess.com/about-us/); target mapping pending org approval"
+    },
+    {
+      "from": "/what-we-do/",
+      "to": "/programs/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20230921174631 (https://dnncstepstosuccess.com/what-we-do/); target mapping pending org approval"
+    },
+    {
+      "from": "/program-activites/",
+      "to": "/programs/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20240223090222 (https://dnncstepstosuccess.com/program-activites/); target mapping pending org approval"
+    },
+    {
+      "from": "/apply.html",
+      "to": "/contact/scholarship-inquiry/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20190309013833 (http://www.dnncstepstosuccess.com/apply.html); target mapping pending org approval"
+    },
+    {
+      "from": "/apply/",
+      "to": "/contact/scholarship-inquiry/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20230921201741 (https://dnncstepstosuccess.com/apply/); target mapping pending org approval"
+    },
+    {
+      "from": "/donations.html",
+      "to": "/donate/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20190309041907 (http://www.dnncstepstosuccess.com/donations.html); target mapping pending org approval"
+    },
+    {
+      "from": "/contact.html",
+      "to": "/contact/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20190309064510 (http://www.dnncstepstosuccess.com/contact.html); target mapping pending org approval"
+    },
+    {
+      "from": "/privacy-policy/",
+      "to": "/privacy/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20240223102659 (https://dnncstepstosuccess.com/privacy-policy/); target mapping pending org approval"
+    },
+    {
+      "from": "/home.html",
+      "to": "/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20220117102021 (http://www.dnncstepstosuccess.com/home.html); target mapping pending org approval"
+    },
+    {
+      "from": "/wp-login.php",
+      "to": null,
+      "status": 410,
+      "active": true,
+      "verified": true,
+      "note": "Old WordPress admin endpoints must not exist on the new site."
+    },
+    {
+      "from": "/xmlrpc.php",
+      "to": null,
+      "status": 410,
+      "active": true,
+      "verified": true
+    },
+    {
+      "from": "/wp-admin/",
+      "to": null,
+      "status": 410,
+      "active": true,
+      "verified": true,
+      "prefix": true
+    },
+    {
+      "from": "/wp-content/",
+      "to": null,
+      "status": 410,
+      "active": true,
+      "verified": true,
+      "prefix": true
+    },
+    {
+      "from": "/wp-includes/",
+      "to": null,
+      "status": 410,
+      "active": true,
+      "verified": true,
+      "prefix": true
+    },
+    {
+      "from": "/wp-json/",
+      "to": null,
+      "status": 410,
+      "active": true,
+      "verified": true,
+      "prefix": true
+    }
   ]
 }

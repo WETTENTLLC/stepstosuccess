@@ -312,3 +312,14 @@ img, svg { max-width: 100%; display: block; }
 /* Long emails/EINs must wrap at 320px with text-spacing overrides */
 .fact-list li, .notice-box, .site-footer address, .site-footer p, .form-wrap, .form-wrap > * { overflow-wrap: anywhere; min-width: 0; }
 .split > * { min-width: 0; }
+
+/* Zelle donation section */
+.zelle-grid { display: grid; gap: 1.5rem; align-items: start; margin: 1rem 0 1.5rem; }
+@media (min-width: 40rem) { .zelle-grid:not(.zelle-grid--single) { grid-template-columns: minmax(14rem, 20rem) 1fr; } }
+.zelle-qr { margin: 0; padding: 1rem; background: #fff; border: 2px solid var(--navy); border-radius: 12px; text-align: center; }
+.zelle-qr img { display: block; width: 100%; max-width: 20rem; height: auto; margin: 0 auto; image-rendering: pixelated; }
+.zelle-qr figcaption { margin-top: .5rem; font-size: .95rem; }
+.zelle-label { margin: 0; font-weight: 700; color: var(--navy); }
+.zelle-email { margin: .2rem 0 1rem; font-family: var(--font-head); font-size: clamp(1.25rem, 4.5vw, 1.75rem); font-weight: 700; overflow-wrap: anywhere; }
+.zelle-recipient { margin: 0; font-size: 1.2rem; font-weight: 700; letter-spacing: .02em; color: var(--navy); }
+.steps-list { padding-left: 1.4rem; } .steps-list li { margin-bottom: .6rem; }

@@ -19,3 +19,5 @@ dist/
 # Third-party archive research (private)
 research/
 docs/internal/
+
+private/

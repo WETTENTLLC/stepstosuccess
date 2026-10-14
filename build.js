@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const { FORMS, renderForm, formsConfig } = require('./lib/forms');
-const { renderDonateForm, renderStaticDonate } = require('./lib/donate');
+const { renderZelle, showQr, QR_SOURCE } = require('./lib/zelle');
 const site = require('./config/site.json');
 const orgCfg = require('./config/organization.json');
 const { donationsReady, config: donationCfg } = require('./lib/donate');
@@ -72,7 +72,7 @@ for (const file of fs.readdirSync(path.join(SRC, 'pages'))) {
     .replace(/<!--FORM_STATUS-->/g, PROD ? '' : '<!--FORM_STATUS-->')
     .replace(/\{\{photo:([^}]+)\}\}/g, (_, s) => photo(s))
     .replace(/\{\{form:([a-z]+)\}\}/g, (_, id) => { if (!FORMS[id]) throw new Error(`Unknown form: ${id}`); return renderForm(id, { static: PROD }); })
-    .replace(/\{\{donate-form\}\}/g, () => PROD ? renderStaticDonate() : renderDonateForm());
+    .replace(/\{\{donate-form\}\}/g, () => renderZelle({ prod: PROD, live: LIVE }));
   const url = meta.slug === 'home' ? '/' : `/${meta.slug}/`;
 
   const nav = NAV.map(([slug, href, label]) =>
@@ -127,6 +127,7 @@ if (!PROD) {
   const PUB = path.join(__dirname, 'public');
   for (const d of ['css', 'js', 'img']) copyDir(path.join(PUB, d), path.join(OUT, d));
   copyDir(path.join(PUB, 'images', 'optimized'), path.join(OUT, 'images', 'optimized'));
+  if (showQr({ prod: PROD, live: LIVE })) { fs.mkdirSync(path.join(OUT, 'images', 'zelle'), { recursive: true }); fs.copyFileSync(QR_SOURCE, path.join(OUT, 'images', 'zelle', 'zelle-qr.png')); }
   fs.copyFileSync(path.join(PUB, '404.html'), path.join(OUT, '404.html'));
   fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
 

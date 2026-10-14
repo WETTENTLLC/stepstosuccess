@@ -19,6 +19,8 @@ for (const [k, v] of Object.entries(don.approvals)) if (!v) block(`Donations: ${
 if (!don.enabled || !/^https:\/\//.test(don.checkoutUrls.oneTime) || !/^https:\/\//.test(don.checkoutUrls.monthly)) block('Donations: hosted checkout URLs not configured/enabled');
 const org = j('config/organization.json');
 if (!org.irsVerified) block('Organization: legal name, EIN ' + org.ein + ' and 501(c)(3) status not verified against IRS records (config/organization.json irsVerified)');
+if (!don.zelle.qrPublishApproved) block('Donations: Zelle QR publication not approved by Delane (config/donations.json zelle.qrPublishApproved)');
+if (!don.zelle.qrScanTestedWithBankApp) block('Donations: Zelle QR not yet scan-tested with a banking app (zelle.qrScanTestedWithBankApp)');
 if (!org.taxDeductibilityStatement) block('Donations: approved tax-deductibility statement not set (config/organization.json)');
 const unverified = j('config/redirects.json').redirects.filter(r => !r.active && r.status === 301);
 if (unverified.length) block(`Redirects: ${unverified.length} legacy URL guesses are unconfirmed (${unverified.map(r => r.from).join(', ')}); confirm in Search Console or the old site`);
@@ -39,7 +41,7 @@ else {
   const idx = j('assets/photo-index.json');
   const notApproved = Object.entries(idx).filter(([, p]) => p.status !== 'approved').map(([k]) => k);
   if (notApproved.length) block(`Photos: ${notApproved.length} published photo(s) lack confirmed identity/consent (not "approved"): ${notApproved.join(', ')}`);
-  const forbidden = files.map(rel).filter(f => /(^|\/)(server\.js|package(-lock)?\.json|\.env.*|build\.js)$|^(config|lib|assets|data|review|src|backups|node_modules)\//.test(f) || /^images\/(?!optimized\/)/.test(f));
+  const forbidden = files.map(rel).filter(f => /(^|\/)(server\.js|package(-lock)?\.json|\.env.*|build\.js)$|^(config|lib|assets|data|review|src|backups|node_modules)\//.test(f) || /^images\/(?!optimized\/)/.test(f)).filter(f => !(don.zelle.qrPublishApproved && f === 'images/zelle/zelle-qr.png'));
   if (forbidden.length) block(`Dist contains forbidden files: ${forbidden.slice(0, 5).join(', ')}`);
 }
 

@@ -112,7 +112,7 @@ async function main() {
   r = await req(b, api); ok(r.status === 405 || r.status === 404, 'GET on form API not served: ' + r.status);
   r = await req(b, '/donate/start', { method: 'POST', headers: H(b), body: form({ frequency: 'one-time', amount: '50' }) });
   ok(r.status === 503, 'donation POST with donations disabled -> 503');
-  r = await req(b, '/donate/'); ok(/disabled/.test((r.text.match(/<button[^>]*data-submit|<button[^>]*disabled[^>]*>/) || [''])[0]) || /aria-disabled="true"/.test(r.text), 'donate button is disabled');
+  r = await req(b, '/donate/'); ok(!/<form[^>]*donate/.test(r.text) && /donations@dnncstepstosuccess\.com/.test(r.text) && /DNNC STEPS TO SUCCESS, INC/.test(r.text), 'donate page shows Zelle details and no payment form');
   ok(!/name="(card|cc|cvv|cardnumber)/i.test(r.text), 'no card fields on donate page');
   stop(p);
 

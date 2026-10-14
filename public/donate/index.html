@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Donate | DNNC Steps to Success</title>
-  <meta name="description" content="Support DNNC Steps to Success with a one-time or monthly gift that helps women and single parents build careers and stronger families.">
+  <meta name="description" content="Give to DNNC Steps to Success with Zelle and help women and single parents build careers and stronger families.">
   <link rel="canonical" href="https://example.org/donate/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="DNNC Steps to Success">
   <meta property="og:title" content="Donate | DNNC Steps to Success">
-  <meta property="og:description" content="Support DNNC Steps to Success with a one-time or monthly gift that helps women and single parents build careers and stronger families.">
+  <meta property="og:description" content="Give to DNNC Steps to Success with Zelle and help women and single parents build careers and stronger families.">
   <meta property="og:url" content="https://example.org/donate/">
   <meta property="og:image" content="https://example.org/img/logo.png">
   <meta name="twitter:card" content="summary">
@@ -22,6 +22,7 @@
   <script src="/js/enable.js"></script>
   <script src="/js/nav.js" defer></script>
   <script src="/js/forms.js" defer></script>
+  <script src="/js/donate.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -61,38 +62,42 @@
       </div>
     </section>
 
-    <section id="donate" class="section" aria-labelledby="give-title">
+    <section id="donate" class="section" aria-labelledby="form-donate-title">
       <div class="container split split--reverse">
         <div class="form-wrap">
-          <!--form:start--><form class="form donate-form" id="form-donate" method="post" action="/donate/start" novalidate aria-labelledby="form-donate-title">
-  <h2 id="form-donate-title">Make a gift</h2>
-  <!--FORM_STATUS-->
-  
-  <fieldset class="field"><legend>Gift frequency</legend>
+          <div class="zelle" id="form-donate">
+  <h2 id="form-donate-title">Donate with Zelle</h2>
+  <p>Open Zelle through your participating banking app and send your gift to:</p>
+  <div class="zelle-grid zelle-grid--single">
     
-    <div class="choices"><div class="choice"><input type="radio" name="frequency" id="gift-one-time" value="one-time" checked><label for="gift-one-time">One-time gift</label></div><div class="choice"><input type="radio" name="frequency" id="gift-monthly" value="monthly"><label for="gift-monthly">Monthly gift</label></div></div>
-  </fieldset>
-  <fieldset class="field"><legend>Gift amount (US dollars)</legend>
-    
-    <div class="choices"><div class="choice"><input type="radio" name="amount" id="amt-25" value="25"><label for="amt-25">$25</label></div><div class="choice"><input type="radio" name="amount" id="amt-50" value="50"><label for="amt-50">$50</label></div><div class="choice"><input type="radio" name="amount" id="amt-100" value="100"><label for="amt-100">$100</label></div><div class="choice"><input type="radio" name="amount" id="amt-250" value="250"><label for="amt-250">$250</label></div><div class="choice"><input type="radio" name="amount" id="amt-other" value="other"><label for="amt-other">Other amount</label></div></div>
-    <div class="field field--inline"><label for="other-amount">Other amount in dollars <span class="req">(only if you chose Other)</span></label>
-    <input type="text" id="other-amount" name="otherAmount" inputmode="numeric" maxlength="8" autocomplete="off" value=""></div>
-  </fieldset>
-  <p class="form-notice">You will finish on the payment processor's secure page. This website never sees or stores your card details.</p>
-  <button class="btn btn--primary" type="submit" data-submit>Continue to Secure Checkout</button>
-</form><!--form:end-->
-          <div class="notice-box">
-            <h3>About your gift</h3>
-            <p>Choose a one-time or monthly gift. You finish on our payment provider&rsquo;s secure page, which also handles recurring payments, confirmation and receipts. This website never sees your card details.</p>
-            <p>Gift confirmations and receipts are sent by our payment provider.</p>
-            <p>Questions about receipts or tax treatment of a gift? Email <a href="mailto:delane@delanesnails.com">delane@delanesnails.com</a>.</p>
-          </div>
+    <div class="zelle-details">
+      <p class="zelle-label" id="zelle-email-label">Zelle email</p>
+      <p class="zelle-email"><a href="mailto:donations@dnncstepstosuccess.com" id="zelle-email">donations@dnncstepstosuccess.com</a></p>
+      <button type="button" class="btn btn--secondary" data-copy="#zelle-email" hidden>Copy email address</button>
+      <p class="sr-only" role="status" aria-live="polite" data-copy-status></p>
+      <div class="notice-box">
+        <p class="h3">Before you send</p>
+        <p>Confirm that the recipient appears as:</p>
+        <p class="zelle-recipient">DNNC STEPS TO SUCCESS, INC</p>
+      </div>
+    </div>
+  </div>
+  <h3>How to give with Zelle</h3>
+  <ol class="steps-list">
+    <li>Open your bank&rsquo;s mobile app or website and find <strong>Zelle</strong> (sometimes under &ldquo;Send money&rdquo; or &ldquo;Transfer&rdquo;).</li>
+    <li>choose to send money using an email address, and enter <strong>donations@dnncstepstosuccess.com</strong>.</li>
+    <li>Check that the recipient name shows <strong>DNNC STEPS TO SUCCESS, INC</strong>.</li>
+    <li>Enter your gift amount and send it.</li>
+  </ol>
+  <p class="form-notice">Zelle gifts are one-time transfers made through your own bank. This page does not set up automatic recurring gifts, and receipts are not promised automatically. To request a gift acknowledgment, email <a href="mailto:delane@delanesnails.com">delane@delanesnails.com</a> with your name and the date and amount of your gift. Not every bank offers Zelle.</p>
+</div>
           <h2 class="h3">Corporate and company gifts</h2>
           <p>Companies can give, sponsor or set up workplace giving and matching through a conversation with our team. <a href="/contact/corporate/">Start a corporate inquiry</a>.</p>
         </div>
         <div>
-          <p class="eyebrow">Give</p>
+          <p class="eyebrow">Help Someone Take Their Next Step</p>
           <h2 id="give-title">Where your gift goes</h2>
+          <p>Your support helps DNNC Steps to Success continue its mission of empowering women and families through vocational opportunities, mentorship, and community support.</p>
           <ul class="checks">
             <li>Training scholarships for women and single parents</li>
             <li>Mentoring and classes</li>
@@ -105,11 +110,12 @@
             <li><strong>Organization:</strong> DNNC Steps to Success, a nonprofit organization</li>
             <li><strong>EIN:</strong> 84-4849258</li>
           </ul>
+          <p>Questions about receipts or tax treatment of a gift? Email <a href="mailto:delane@delanesnails.com">delane@delanesnails.com</a>.</p>
+          <p>Thank you for supporting our mission.</p>
         </div>
       </div>
     </section>
-
-    <section class="section section--white" aria-labelledby="other-title">
+<section class="section section--white" aria-labelledby="other-title">
       <div class="container">
         <h2 id="other-title">Not ready to give? There are other ways to help.</h2>
         <div class="btn-row"><a class="btn btn--teal" href="/get-involved/">Get Involved</a><a class="btn btn--secondary" href="/partners/">Explore Corporate Partnerships</a></div>

@@ -23,7 +23,7 @@ Screenshots of every page (desktop 1440 px and mobile 375 px, plus each form sho
 | Press & Recognition | Coverage and recognition drawn from the archived site, with the one verified NAILS Magazine link |
 | Get Involved | Mentor, salon ambassador, Mom of the Year nomination, volunteer |
 | Partnerships | Ways to partner, no invented sponsorship levels |
-| Donate | One-time and monthly layout, who is behind the gift, receipts by the payment provider; giving is "opening soon" |
+| Donate | Zelle giving: recipient name, donations@ email with copy button, how-to steps, QR code (preview only) |
 | Contact | Address, email, how to apply, links to the four forms |
 | Privacy / Accessibility | Plain-language statements |
 
@@ -64,7 +64,7 @@ Name: ____________________  Date: ____________
 
 - Verify domain ownership and set DNS for GitHub Pages; keep existing email DNS records.
 - Verify EIN and tax-exempt status with the IRS before any tax wording.
-- Recover the donation account; connect the approved payment provider; approve receipt wording.
+- Approve publishing the Zelle QR (`zelle.qrPublishApproved`), scan-test it with a banking app, and set up the separate donation acknowledgment process. Givebutter and Software4Nonprofits remain on hold.
 - Approve the form service, recipient, privacy and retention; deploy the Worker; live-test.
 - Edge-level permanent redirects for old URLs (GitHub Pages only supports page-level stubs).
 - Confirm the Senior Moments destination before any link.

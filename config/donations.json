@@ -8,6 +8,7 @@
     "receiptLanguageApproved": false
   },
   "processor": null,
+  "zelle": { "recipientLegalName": "DNNC STEPS TO SUCCESS, INC", "email": "donations@dnncstepstosuccess.com", "qrPublishApproved": false, "qrScanTestedWithBankApp": false },
   "checkoutUrls": { "oneTime": "", "monthly": "" },
   "amountParam": "",
   "suggestedAmounts": [25, 50, 100, 250],

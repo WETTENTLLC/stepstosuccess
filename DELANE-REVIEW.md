@@ -6,7 +6,8 @@ This is a **review draft**, not a launch. Nothing is live, no payments are on, a
 
 The review site is a private local preview (the public repository is not used for review, because photo releases are still being confirmed).
 
-1. From the project folder run: `npm run build:prod` then `npm run preview`
+1. Remote review: use the private, email-protected link (setup in `docs/REVIEW-HOSTING.md`). Local review (includes the private Zelle QR): `npm run build:local-qr` then `npm run preview`.
+1. Local, without the QR: `npm run build:prod` then `npm run preview`
 2. Open **http://127.0.0.1:4000/**
 
 Screenshots of every page (desktop 1440 px and mobile 375 px, plus each form showing its error messages) are in `review/screenshots/` (private, not in the repository). Re-create them with `npm run screenshots`.

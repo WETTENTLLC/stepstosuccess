@@ -150,6 +150,7 @@ if (!PROD) {
     fs.writeFileSync(path.join(OUT, 'CNAME'), site.domain + '\n');
   } else {
     fs.writeFileSync(path.join(OUT, 'robots.txt'), 'User-agent: *\nDisallow: /\n');
+    fs.writeFileSync(path.join(OUT, '_headers'), '/*\n  X-Robots-Tag: noindex, nofollow, noarchive\n  Referrer-Policy: no-referrer\n  X-Content-Type-Options: nosniff\n  X-Frame-Options: DENY\n');
   }
   console.log(LIVE ? 'PRODUCTION build (launchApproved)' : 'PRODUCTION PREVIEW build (launch not approved: noindex, no sitemap, no CNAME)');
 }

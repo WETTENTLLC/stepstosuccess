@@ -18,6 +18,8 @@
     "launch-gate": "node review/launch-gate.js",
     "smoke": "node review/smoke.js",
     "test:worker": "node review/worker.mjs",
+    "build:review": "node review/build-review.js",
+    "build:local-qr": "node review/build-local-qr.js",
     "preview": "node review/preview.js",
     "screenshots": "node review/screenshots.js"
   },

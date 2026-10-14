@@ -30,7 +30,7 @@ Screenshots of every page (desktop 1440 px and mobile 375 px, plus each form sho
 ## Forms and donations
 
 - **Forms:** four forms are built: General message, Scholarship inquiry, Volunteer or mentor, and Corporate partnership. (There was a fifth, Senior Moments; it was removed on the owner's instruction that this site covers only Steps to Success.) You can try each form, see clear labels and error messages, and the preview confirms "nothing was sent." Real delivery is off. The independent Cloudflare Workers backend is built and tested (`workers/forms/`) but not deployed.
-- **Donations:** off. The page shows a clear "opening soon" message with your email. Waiting on recovery and review of the existing Software4Nonprofits account. Givebutter is not activated.
+- **Donations:** Zelle is the primary method (recipient DNNC STEPS TO SUCCESS, INC; donations@dnncstepstosuccess.com), shown in review mode only. The QR is published only after Delane approves it and it is scan-tested. No processor is connected; Givebutter and Software4Nonprofits are on hold as possible future options. Acknowledgment process: `docs/DONATION-ACKNOWLEDGMENTS.md`.
 
 ## Needs Delane's approval
 

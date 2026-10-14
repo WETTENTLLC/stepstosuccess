@@ -57,7 +57,7 @@ const orgTokens = {
   'org-footer': `${esc(orgCfg.displayName)} is a ${orgCfg.irsVerified ? esc(orgCfg.classification) : 'nonprofit organization'}. EIN ${esc(orgCfg.ein)}.`,
   'org-details': `<li><strong>Organization:</strong> ${esc(orgCfg.legalName)}, ${orgCfg.irsVerified ? esc(orgCfg.classification) : 'a nonprofit organization'}</li>\n            <li><strong>EIN:</strong> ${esc(orgCfg.ein)}</li>`,
   'org-tax': taxClaimsOk ? `<p>${esc(orgCfg.taxDeductibilityStatement)}</p>` : '<p>Questions about receipts or tax treatment of a gift? Email <a href="mailto:delane@delanesnails.com">delane@delanesnails.com</a>.</p>',
-  'org-receipts': '<p>Gift confirmations and receipts are sent by our payment provider.</p>',
+  'org-receipts': '<p>To request a gift acknowledgment, email <a href="mailto:delane@delanesnails.com">delane@delanesnails.com</a>.</p>',
 };
 const applyOrg = s => s.replace(/\{\{(org-footer|org-details|org-tax|org-receipts)\}\}/g, (_, k) => orgTokens[k]);
 

@@ -9,7 +9,7 @@ const ROOT = path.join(__dirname, '..');
 const axeSrc = fs.readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
 const BASE = 'http://127.0.0.1:3200';
 const PAGES = ['/', '/our-story/', '/programs/', '/impact/', '/events/', '/press/', '/get-involved/', '/donate/', '/partners/', '/contact/',
-  '/contact/message/', '/contact/scholarship-inquiry/', '/contact/volunteer/', '/contact/corporate/', '/contact/thanks/', '/privacy/', '/accessibility/'];
+  '/contact/message/', '/contact/scholarship-inquiry/', '/contact/volunteer/', '/contact/corporate/', '/contact/car-nomination/', '/contact/thanks/', '/privacy/', '/accessibility/'];
 const FORM_PAGES = PAGES.filter(p => /^\/contact\/[a-z-]+\/$/.test(p) && !/thanks/.test(p));
 let fails = 0, passes = 0;
 const ok = (c, m) => { c ? passes++ : fails++; if (!c || process.env.VERBOSE) console.log((c ? 'PASS ' : 'FAIL ') + m); };

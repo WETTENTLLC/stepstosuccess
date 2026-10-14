@@ -14,7 +14,8 @@
                                        "contact":  "https://api.web3forms.com/submit",
                                        "scholarship":  "https://api.web3forms.com/submit",
                                        "volunteer":  "https://api.web3forms.com/submit",
-                                       "corporate":  "https://api.web3forms.com/submit"
+                                       "corporate":  "https://api.web3forms.com/submit",
+                                       "nomination":  "https://api.web3forms.com/submit"
                                    },
                      "honeypotName":  "botcheck",
                      "redirectField":  "redirect",

@@ -5,7 +5,7 @@ const path = require('path');
 const { cr } = require('./contrast');
 const BASE = process.env.BASE || 'http://localhost:3000';
 const WIDTHS = [320, 375, 768, 1024, 1100, 1440];
-const PAGES = ['/', '/our-story/', '/programs/', '/impact/', '/events/', '/press/', '/get-involved/', '/donate/', '/partners/', '/contact/', '/contact/message/', '/contact/scholarship-inquiry/', '/contact/volunteer/', '/contact/corporate/', '/contact/thanks/', '/privacy/', '/accessibility/'];
+const PAGES = ['/', '/our-story/', '/programs/', '/impact/', '/events/', '/press/', '/get-involved/', '/donate/', '/partners/', '/contact/', '/contact/message/', '/contact/scholarship-inquiry/', '/contact/volunteer/', '/contact/corporate/', '/contact/car-nomination/', '/contact/thanks/', '/privacy/', '/accessibility/'];
 
 const settle = async page => {
   await page.evaluate(async () => {

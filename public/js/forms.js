@@ -16,6 +16,22 @@
     var id = form.id.replace('form-', '');
     var cap = function (t) { return t.charAt(0).toUpperCase() + t.slice(1); };
 
+    // Date-limited forms (annual window, Pacific time): stay hidden and show the "closed" notice outside the window.
+    if (form.getAttribute('data-window') === 'annual-dec-25-31') {
+      var open = false;
+      try {
+        var parts = {};
+        new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', month: 'numeric', day: 'numeric' }).formatToParts(new Date())
+          .forEach(function (p) { parts[p.type] = Number(p.value); });
+        open = parts.month === 12 && parts.day >= 25;
+      } catch (err) { open = false; }
+      if (open) {
+        form.hidden = false;
+        var closed = document.getElementById('window-closed');
+        if (closed) closed.parentNode.removeChild(closed);
+      }
+    }
+
     function check(f, el) {
       var v = f.t === 'checkbox' ? (el.checked ? 'yes' : '') : f.t === 'textarea' ? (el.value || '').trim() : (el.value || '').replace(/\s+/g, ' ').trim();
       if (!v) return f.r ? (f.e || (f.t === 'select' ? 'Choose ' + f.noun + '.' : 'Enter your ' + f.noun + '.')) : '';

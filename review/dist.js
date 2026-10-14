@@ -10,7 +10,7 @@ const DIST = path.join(ROOT, 'dist');
 const axeSrc = fs.readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
 const PORT = 4010, BASE = `http://127.0.0.1:${PORT}`;
 const PAGES = ['/', '/our-story/', '/programs/', '/impact/', '/events/', '/press/', '/get-involved/', '/donate/', '/partners/', '/contact/',
-  '/contact/message/', '/contact/scholarship-inquiry/', '/contact/volunteer/', '/contact/corporate/', '/contact/thanks/', '/privacy/', '/accessibility/'];
+  '/contact/message/', '/contact/scholarship-inquiry/', '/contact/volunteer/', '/contact/corporate/', '/contact/car-nomination/', '/contact/thanks/', '/privacy/', '/accessibility/'];
 const j = f => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
 const LIVE = j('config/site.json').launchApproved === true;
 const FORMS_LIVE = Object.values(j('config/forms.json').provider.endpoints).every(u => /^https:\/\//.test(u));
@@ -54,7 +54,7 @@ const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-prac
     }
     ok(bad.length === 0, 'no failed requests, CSP violations or JS errors' + (bad.length ? '\n      ' + [...new Set(bad)].slice(0, 6).join('\n      ') : ''));
 
-    for (const p of PAGES.filter(x => /^\/contact\/[a-z-]+\/$/.test(x) && !/thanks/.test(x))) {
+    for (const p of PAGES.filter(x => /^\/contact\/[a-z-]+\/$/.test(x) && !/thanks|car-nomination/.test(x))) {
       await page.goto(BASE + p);
       await page.locator('form button[type=submit]').click();
       ok(await page.locator('#error-summary').count() === 1, `empty submit shows accessible error summary ${p}`);
@@ -78,6 +78,24 @@ const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-prac
     await page.evaluate(axeSrc);
     const res = await page.evaluate(t => axe.run(document, { runOnly: { type: 'tag', values: t } }), TAGS);
     ok(res.violations.length === 0, 'axe on client error state' + (res.violations.length ? ' ' + res.violations.map(v => v.id + ' ' + v.nodes[0].target.join(' ')).join('; ') : ''));
+    // Car nomination window (Dec 25-31 Pacific): closed by default, opens inside the window, closes again after it.
+    const NOM = BASE + '/contact/car-nomination/';
+    for (const [iso, open] of [['2026-12-24T23:59:00-08:00', false], ['2026-12-25T00:00:30-08:00', true], ['2026-12-31T23:59:00-08:00', true], ['2027-01-01T00:00:30-08:00', false], ['2026-06-15T12:00:00-07:00', false]]) {
+      const nctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+      const np = await nctx.newPage();
+      await np.addInitScript(t => { const R = Date, fixed = new R(t).getTime(); window.Date = class extends R { constructor(...a) { super(...(a.length ? a : [fixed])); } static now() { return fixed; } }; }, iso);
+      await np.goto(NOM);
+      ok(await np.locator('form#form-nomination').isVisible() === open, `nomination form ${open ? 'open' : 'closed'} at ${iso}`);
+      ok(await np.locator('#window-closed').count() === (open ? 0 : 1), `nomination closed notice ${open ? 'removed' : 'shown'} at ${iso}`);
+      if (open && iso.startsWith('2026-12-25')) {
+        await np.locator('form#form-nomination button[type=submit]').click();
+        ok(await np.locator('#error-summary').count() === 1, 'nomination empty submit shows error summary');
+        await np.evaluate(axeSrc);
+        const r2 = await np.evaluate(t => axe.run(document, { runOnly: { type: 'tag', values: t } }), TAGS);
+        ok(r2.violations.length === 0, 'axe on open nomination form' + (r2.violations.length ? ' ' + r2.violations.map(v => v.id).join(',') : ''));
+      }
+      await nctx.close();
+    }
     await ctx.close();
   } finally { await browser.close(); srv.close(); }
   console.log(`\ndist tests: ${passes} passed, ${fails} failed`);

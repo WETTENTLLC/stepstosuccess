@@ -13,6 +13,11 @@ const fields = {
   organization: { max: 150 },
   role: { max: 100 },
   consent: { type: 'checkbox' },
+  nomineeName: { max: 100 },
+  nomineeContact: { max: 254 },
+  nomineeCity: { max: 100 },
+  carNeed: { max: 1000, min: 10, multiline: true },
+  permission: { type: 'checkbox' },
 };
 
 export const SCHEMAS = {
@@ -20,7 +25,8 @@ export const SCHEMAS = {
   scholarship: { required: ['name', 'preferredContact', 'message', 'consent'], oneOf: ['email', 'phone'] },
   volunteer: { required: ['name', 'email', 'interest', 'consent'], options: { interest: ['mentoring', 'events', 'skills', 'unsure'] } },
   corporate: { required: ['name', 'organization', 'email', 'interest', 'message', 'consent'], options: { interest: ['sponsorship', 'event', 'inkind', 'workplace', 'team', 'unsure'] } },
-};
+    nomination: { required: ['name', 'email', 'nomineeName', 'nomineeContact', 'nomineeCity', 'message', 'carNeed', 'permission', 'consent'] },
+  };
 
 const MAX_BODY = 8 * 1024;
 const HONEYPOT = 'website';
@@ -77,7 +83,7 @@ async function verifyTurnstile(token, secret, ip, fetchImpl) {
   return r.ok && (await r.json()).success === true;
 }
 
-const SUBJECTS = { contact: 'General message', scholarship: 'Scholarship inquiry', volunteer: 'Volunteer or mentor interest', corporate: 'Corporate partnership inquiry' };
+const SUBJECTS = { contact: 'General message', scholarship: 'Scholarship inquiry', volunteer: 'Volunteer or mentor interest', corporate: 'Corporate partnership inquiry', nomination: 'Car giveaway nomination' };
 
 export async function handle(request, env, deps = {}) {
   const fetchImpl = deps.fetch || fetch;

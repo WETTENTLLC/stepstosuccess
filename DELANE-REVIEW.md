@@ -32,6 +32,16 @@ Screenshots of every page (desktop 1440 px and mobile 375 px, plus each form sho
 - **Forms:** four forms are built: General message, Scholarship inquiry, Volunteer or mentor, and Corporate partnership. (There was a fifth, Senior Moments; it was removed on the owner's instruction that this site covers only Steps to Success.) You can try each form, see clear labels and error messages, and the preview confirms "nothing was sent." Real delivery is off. The independent Cloudflare Workers backend is built and tested (`workers/forms/`) but not deployed.
 - **Donations:** Zelle is the primary method (recipient DNNC STEPS TO SUCCESS, INC; donations@dnncstepstosuccess.com), shown in review mode only. The QR is published only after Delane approves it and it is scan-tested. No processor is connected; Givebutter and Software4Nonprofits are on hold as possible future options. Acknowledgment process: `docs/DONATION-ACKNOWLEDGMENTS.md`.
 
+### Donation acknowledgment procedure (Zelle) - for Delane's approval
+Zelle does not provide the organization's own acknowledgment, so the organization issues it:
+1. Record each gift from the bank's Zelle notice (date, amount, donor name as shown). Keep the log private, never in the website repo.
+2. When a donor emails delane@delanesnails.com with name, date and amount, match it to the log.
+3. Send a thank-you acknowledgment (suggested within 14 days) and keep a numbered copy.
+4. Reconcile the log with bank statements monthly.
+5. No tax wording until IRS records confirm the legal name, EIN 84-4849258 and current eligibility, and Delane approves the letter.
+
+Delane decides: who records and sends, the response time, the letter wording and signer, and where the log is stored. Full draft: `docs/DONATION-ACKNOWLEDGMENTS.md`. The Zelle QR stays hidden from any public build until Delane approves it and it is scan-tested with a banking app.
+
 ## Needs Delane's approval
 
 1. Wording and photographs on every page.

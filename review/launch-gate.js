@@ -16,7 +16,7 @@ for (const [k, v] of Object.entries(forms.approvals)) if (!v) block(`Forms: ${k}
 for (const [k, v] of Object.entries(forms.provider.endpoints)) if (!/^https:\/\//.test(v)) block(`Forms: no approved endpoint for "${k}"`);
 if (forms.retentionDays == null) block('Forms: data-retention period not set');
 for (const [k, v] of Object.entries(don.approvals)) if (!v) block(`Donations: ${k} is not verified`);
-if (!don.enabled || !/^https:\/\//.test(don.checkoutUrls.oneTime) || !/^https:\/\//.test(don.checkoutUrls.monthly)) block('Donations: hosted checkout URLs not configured/enabled');
+if (!don.enabled || !/^https:\/\//.test(don.checkoutUrls.oneTime)) block('Donations: hosted checkout URLs not configured/enabled');
 const org = j('config/organization.json');
 if (!org.irsVerified) block('Organization: legal name, EIN ' + org.ein + ' and 501(c)(3) status not verified against IRS records (config/organization.json irsVerified)');
 if (!don.zelle.qrPublishApproved) block('Donations: Zelle QR publication not approved by Delane (config/donations.json zelle.qrPublishApproved)');

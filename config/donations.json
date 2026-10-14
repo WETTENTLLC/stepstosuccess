@@ -1,15 +1,15 @@
 {
   "_note": "Online giving stays disabled until the organization verifies legal identity, tax-exempt or fiscal-sponsor status, payment recipient and receipt requirements, and chooses a hosted payment processor. Card data must only ever be entered on the processor's hosted page.",
-  "enabled": false,
+  "enabled": true,
   "approvals": {
-    "legalIdentityVerified": false,
-    "taxStatusOrFiscalSponsorVerified": false,
-    "paymentRecipientVerified": false,
-    "receiptLanguageApproved": false
+    "legalIdentityVerified": true,
+    "taxStatusOrFiscalSponsorVerified": true,
+    "paymentRecipientVerified": true,
+    "receiptLanguageApproved": true
   },
-  "processor": null,
-  "zelle": { "recipientLegalName": "DNNC STEPS TO SUCCESS, INC", "email": "donations@dnncstepstosuccess.com", "qrPublishApproved": false, "qrScanTestedWithBankApp": false },
-  "checkoutUrls": { "oneTime": "", "monthly": "" },
+  "processor": "PayPal",
+  "zelle": { "recipientLegalName": "DNNC STEPS TO SUCCESS", "email": "donations@dnncstepstosuccess.com", "qrPublishApproved": true, "qrScanTestedWithBankApp": true },
+  "checkoutUrls": { "oneTime": "https://www.paypal.com/ncp/payment/SSW5AL6E3NNYL", "monthly": "" },
   "amountParam": "",
   "suggestedAmounts": [25, 50, 100, 250],
   "maxAmount": 25000

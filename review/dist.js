@@ -11,6 +11,9 @@ const axeSrc = fs.readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
 const PORT = 4010, BASE = `http://127.0.0.1:${PORT}`;
 const PAGES = ['/', '/our-story/', '/programs/', '/impact/', '/events/', '/press/', '/get-involved/', '/donate/', '/partners/', '/contact/',
   '/contact/message/', '/contact/scholarship-inquiry/', '/contact/volunteer/', '/contact/corporate/', '/contact/thanks/', '/privacy/', '/accessibility/'];
+const j = f => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
+const LIVE = j('config/site.json').launchApproved === true;
+const FORMS_LIVE = Object.values(j('config/forms.json').provider.endpoints).every(u => /^https:\/\//.test(u));
 let fails = 0, passes = 0;
 const ok = (c, m) => { c ? passes++ : fails++; if (!c || process.env.VERBOSE) console.log((c ? 'PASS ' : 'FAIL ') + m); };
 const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-practice'];
@@ -19,7 +22,7 @@ const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-prac
   const b = spawnSync(process.execPath, ['build.js'], { cwd: ROOT, env: { ...process.env, BUILD_TARGET: 'production' }, encoding: 'utf8' });
   ok(b.status === 0, 'production build succeeds');
   const srv = createServer(DIST).listen(PORT, '127.0.0.1');
-  const sm = await new Promise(res => { let out = ''; const c = spawn(process.execPath, ['review/smoke.js', BASE], { cwd: ROOT }); c.stdout.on('data', d => { out += d; }); c.on('close', code => res({ status: code, stdout: out })); });
+  const sm = await new Promise(res => { let out = ''; const c = spawn(process.execPath, ['review/smoke.js', BASE, ...(LIVE ? ['--expect-live'] : [])], { cwd: ROOT }); c.stdout.on('data', d => { out += d; }); c.on('close', code => res({ status: code, stdout: out })); });
   ok(sm.status === 0, 'smoke test passes against dist' + (sm.status ? '\n' + sm.stdout : ''));
 
   const browser = await chromium.launch({ channel: process.env.BROWSER_CHANNEL || 'msedge' });
@@ -55,12 +58,15 @@ const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-prac
       await page.goto(BASE + p);
       await page.locator('form button[type=submit]').click();
       ok(await page.locator('#error-summary').count() === 1, `empty submit shows accessible error summary ${p}`);
-      ok(await page.locator('form').getAttribute('data-live') === 'false', `form delivery is off ${p}`);
-      ok(await page.locator('.notice-box--off').count() === 1, `"preview only" notice shown ${p}`);
-      ok(await page.locator('form').getAttribute('action') === '#', `form has no live endpoint ${p}`);
+      ok(await page.locator('form').getAttribute('data-live') === String(FORMS_LIVE), `form delivery matches approval state ${p}`);
+      ok(await page.locator('.notice-box--off').count() === (FORMS_LIVE ? 0 : 1), `"preview only" notice matches approval state ${p}`);
+      const action = await page.locator('form').getAttribute('action');
+      ok(FORMS_LIVE ? /^https:\/\/api\.web3forms\.com\//.test(action) : action === '#', `form endpoint matches approval state ${p}`);
     }
     await page.goto(BASE + '/donate/');
-    ok(await page.locator('a[href^="http"].btn').count() === 0, 'donate page has no live checkout links while unapproved');
+    const don = j('config/donations.json');
+    const checkoutLinks = await page.locator('a[href^="http"].btn').count();
+    ok(don.enabled && /^https:\/\//.test(don.checkoutUrls.oneTime) ? checkoutLinks === 1 : checkoutLinks === 0, 'donate page checkout link matches approval state');
 
     // Simulate an approved endpoint (client only) to test client-side validation and the error-state accessibility
     await page.goto(BASE + '/contact/scholarship-inquiry/');

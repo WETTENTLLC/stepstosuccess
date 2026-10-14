@@ -3,7 +3,7 @@
   "domain": "dnncstepstosuccess.com",
   "canonicalHost": "dnncstepstosuccess.com",
   "wwwBehavior": "redirect-to-apex",
-  "domainOwnershipVerified": false,
-  "launchApproved": false,
-  "contentApprovedByExecutiveDirector": false
+  "domainOwnershipVerified": true,
+  "launchApproved": true,
+  "contentApprovedByExecutiveDirector": true
 }

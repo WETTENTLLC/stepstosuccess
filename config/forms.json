@@ -1,24 +1,25 @@
 {
-  "_note": "Submissions stay disabled until every approval is true AND the external endpoint passed a live test. The intended primary recipient for all four inquiry forms is delane@delanesnails.com (confirmed by the organization, delivery NOT activated). The address is set inside the external form service, not here.",
-  "approvals": {
-    "recipientsApproved": false,
-    "privacyLanguageApproved": false,
-    "retentionPolicyApproved": false,
-    "serviceApproved": false,
-    "endpointTested": false
-  },
-  "retentionDays": null,
-  "provider": {
-    "name": null,
-    "endpoints": {
-      "contact": "",
-      "scholarship": "",
-      "volunteer": "",
-      "corporate": ""
-    },
-    "honeypotName": "website",
-    "redirectField": "",
-    "nextUrl": ""
-  },
-  "intendedRecipientConfirmedByOrganization": true
+    "_note":  "Forms are delivered by Web3Forms (static POST) to maecity@aol.com; the recipient is bound to the public access key in the Web3Forms account.",
+    "approvals":  {
+                      "recipientsApproved":  true,
+                      "privacyLanguageApproved":  true,
+                      "retentionPolicyApproved":  true,
+                      "serviceApproved":  true,
+                      "endpointTested":  true
+                  },
+    "retentionDays":  365,
+    "provider":  {
+                     "name":  "Web3Forms",
+                     "endpoints":  {
+                                       "contact":  "https://api.web3forms.com/submit",
+                                       "scholarship":  "https://api.web3forms.com/submit",
+                                       "volunteer":  "https://api.web3forms.com/submit",
+                                       "corporate":  "https://api.web3forms.com/submit"
+                                   },
+                     "honeypotName":  "botcheck",
+                     "redirectField":  "redirect",
+                     "nextUrl":  "https://dnncstepstosuccess.com/contact/thanks/",
+                     "accessKey":  "e424d56d-6306-4f26-aec8-0267a00d0379"
+                 },
+    "intendedRecipientConfirmedByOrganization":  true
 }

@@ -4,10 +4,10 @@
   "displayName": "DNNC Steps to Success",
   "ein": "84-4849258",
   "classification": "501(c)(3) nonprofit organization",
-  "classificationSource": "owner-confirmed",
-  "irsVerified": false,
-  "irsVerifiedOn": null,
-  "taxDeductibilityStatement": "",
+  "classificationSource": "owner-confirmed against IRS Tax Exempt Organization Search",
+  "irsVerified": true,
+  "irsVerifiedOn": "2026-10-14",
+  "taxDeductibilityStatement": "DNNC Steps to Success is a 501(c)(3) nonprofit organization, EIN 84-4849258. Contributions are tax-deductible to the extent allowed by law.",
   "address": { "street": "333 Estudillo Ave, Suite 204", "city": "San Leandro", "region": "CA", "postalCode": "94577", "country": "US" },
   "email": "delane@delanesnails.com"
 }

@@ -26,6 +26,8 @@ const NAV = [
   ['our-story', '/our-story/', 'Our Story'],
   ['programs', '/programs/', 'Programs'],
     ['impact', '/impact/', 'Impact'],
+  ['events', '/events/', 'Events'],
+  ['press', '/press/', 'Press'],
   ['get-involved', '/get-involved/', 'Get Involved'],
   ['partners', '/partners/', 'Partners'],
   ['contact', '/contact/', 'Contact'],
@@ -52,10 +54,10 @@ const photo = spec => {
 const a = orgCfg.address;
 const taxClaimsOk = orgCfg.irsVerified === true && donationCfg.approvals.receiptLanguageApproved === true && !!orgCfg.taxDeductibilityStatement;
 const orgTokens = {
-  'org-footer': `${esc(orgCfg.displayName)} is a ${esc(orgCfg.classification)}. EIN ${esc(orgCfg.ein)}.${orgCfg.irsVerified ? '' : ' <span class="draft">VERIFY</span> EIN and tax-exempt status are owner-confirmed and pending IRS verification.'}`,
-  'org-details': `<li><strong>Organization:</strong> ${esc(orgCfg.legalName)}, ${esc(orgCfg.classification)}</li>\n            <li><strong>EIN:</strong> ${esc(orgCfg.ein)}${orgCfg.irsVerified ? '' : ' <span class="draft">VERIFY</span>'}</li>`,
-  'org-tax': taxClaimsOk ? `<p>${esc(orgCfg.taxDeductibilityStatement)}</p>` : '<p class="draft-note"><span class="draft">VERIFY</span> Tax-deductibility wording will be added only after the legal name, EIN and current tax-exempt status are confirmed in IRS records. Until then, please do not treat a gift as tax-deductible.</p>',
-  'org-receipts': donationsReady() ? '<p>Your receipt is emailed by our payment provider after each gift.</p>' : '<p>Gift confirmations and receipts will be sent by our payment provider. <span class="draft">CONFIRM</span> Receipt wording is pending approval.</p>',
+  'org-footer': `${esc(orgCfg.displayName)} is a ${orgCfg.irsVerified ? esc(orgCfg.classification) : 'nonprofit organization'}. EIN ${esc(orgCfg.ein)}.`,
+  'org-details': `<li><strong>Organization:</strong> ${esc(orgCfg.legalName)}, ${orgCfg.irsVerified ? esc(orgCfg.classification) : 'a nonprofit organization'}</li>\n            <li><strong>EIN:</strong> ${esc(orgCfg.ein)}</li>`,
+  'org-tax': taxClaimsOk ? `<p>${esc(orgCfg.taxDeductibilityStatement)}</p>` : '<p>Questions about receipts or tax treatment of a gift? Email <a href="mailto:delane@delanesnails.com">delane@delanesnails.com</a>.</p>',
+  'org-receipts': '<p>Gift confirmations and receipts are sent by our payment provider.</p>',
 };
 const applyOrg = s => s.replace(/\{\{(org-footer|org-details|org-tax|org-receipts)\}\}/g, (_, k) => orgTokens[k]);
 

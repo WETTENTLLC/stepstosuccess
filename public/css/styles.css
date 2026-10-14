@@ -200,6 +200,7 @@ img, svg { max-width: 100%; display: block; }
 .section--turq .eyebrow::before { background: var(--turq); }
 .btn--teal { background: var(--turq-dark); color: var(--white); border-color: var(--turq-dark); }
 .btn--teal:hover { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.center { text-align: center; margin-top: 1.5rem; }
 .card--turq { border-top: 5px solid var(--turq); }
 .path li:nth-child(even) { border-bottom-color: var(--turq); }
 .path li:nth-child(even)::before { color: var(--turq-dark); }

@@ -11,6 +11,7 @@ const block = m => blockers.push(m);
 const site = j('config/site.json'), forms = j('config/forms.json'), don = j('config/donations.json');
 if (!site.domainOwnershipVerified) block('Domain ownership/registrar control not verified (config/site.json domainOwnershipVerified)');
 if (!site.launchApproved) block('Written final launch authorization not recorded (config/site.json launchApproved)');
+if (!site.contentApprovedByExecutiveDirector) block('Executive Director content and photo approval not recorded (config/site.json contentApprovedByExecutiveDirector; see DELANE-REVIEW.md)');
 for (const [k, v] of Object.entries(forms.approvals)) if (!v) block(`Forms: ${k} is not approved`);
 for (const [k, v] of Object.entries(forms.provider.endpoints)) if (!/^https:\/\//.test(v)) block(`Forms: no approved endpoint for "${k}"`);
 if (forms.retentionDays == null) block('Forms: data-retention period not set');

@@ -82,6 +82,110 @@
       "source": "Wayback capture 20220117102021 (http://www.dnncstepstosuccess.com/home.html); target mapping pending org approval"
     },
     {
+      "from": "/events.html",
+      "to": "/events/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20190309042449 (http://www.dnncstepstosuccess.com/events.html); target mapping pending org approval"
+    },
+    {
+      "from": "/media.html",
+      "to": "/press/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20190309074357 (http://www.dnncstepstosuccess.com/media.html); target mapping pending org approval"
+    },
+    {
+      "from": "/gallery/",
+      "to": "/events/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20230921194555 (https://dnncstepstosuccess.com/gallery/); target mapping pending org approval"
+    },
+    {
+      "from": "/car-giveaway-2023/",
+      "to": "/impact/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20240223085928 (https://dnncstepstosuccess.com/car-giveaway-2023/); target mapping pending org approval"
+    },
+    {
+      "from": "/2017-dnnc-sts-gala/",
+      "to": "/events/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20230921200212 (https://dnncstepstosuccess.com/2017-dnnc-sts-gala/); target mapping pending org approval"
+    },
+    {
+      "from": "/2018-dnnc-sts-gala/",
+      "to": "/events/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20230921182810 (https://dnncstepstosuccess.com/2018-dnnc-sts-gala/); target mapping pending org approval"
+    },
+    {
+      "from": "/2019-dnnc-sts-gala/",
+      "to": "/events/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20230921193219 (https://dnncstepstosuccess.com/2019-dnnc-sts-gala/); target mapping pending org approval"
+    },
+    {
+      "from": "/2020-dnnc-sts-gala/",
+      "to": "/events/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20230921183210 (https://dnncstepstosuccess.com/2020-dnnc-sts-gala/); target mapping pending org approval"
+    },
+    {
+      "from": "/2023-dnnc-sts-gala/",
+      "to": "/events/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20231205184430 (https://dnncstepstosuccess.com/2023-dnnc-sts-gala/); target mapping pending org approval"
+    },
+    {
+      "from": "/2017-dnnc-sts-gala.html",
+      "to": "/events/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20190721190628 (http://www.dnncstepstosuccess.com/2017-dnnc-sts-gala.html); target mapping pending org approval"
+    },
+    {
+      "from": "/2018-dnnc-sts-gala.html",
+      "to": "/events/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20190721193700 (http://www.dnncstepstosuccess.com/2018-dnnc-sts-gala.html); target mapping pending org approval"
+    },
+    {
+      "from": "/2019-dnnc-sts-gala.html",
+      "to": "/events/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20190820045634 (http://www.dnncstepstosuccess.com/2019-dnnc-sts-gala.html); target mapping pending org approval"
+    },
+    {
+      "from": "/2020-dnnc-sts-gala.html",
+      "to": "/events/",
+      "status": 301,
+      "active": true,
+      "verified": true,
+      "source": "Wayback capture 20210125142330 (http://www.dnncstepstosuccess.com/2020-dnnc-sts-gala.html); target mapping pending org approval"
+    },
+    {
       "from": "/wp-login.php",
       "to": null,
       "status": 410,

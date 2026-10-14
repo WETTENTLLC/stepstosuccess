@@ -1,0 +1,14 @@
+name = "dnnc-forms"
+main = "src/index.mjs"
+compatibility_date = "2025-01-01"
+
+# Delivery stays off until the organization approves the service, recipient,
+# privacy language and retention, and a live test passes.
+[vars]
+DELIVERY_ENABLED = "false"
+ALLOWED_ORIGIN = "https://dnncstepstosuccess.com"
+
+# Secrets (never commit): wrangler secret put TURNSTILE_SECRET / RECIPIENT / SENDER
+# Email binding is configured with Cloudflare Email Routing (verified recipient).
+# [[send_email]]
+# name = "MAILER"

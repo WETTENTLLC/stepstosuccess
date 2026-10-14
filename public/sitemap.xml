@@ -8,10 +8,12 @@
   <url><loc>https://example.org/contact/scholarship-inquiry/</loc></url>
   <url><loc>https://example.org/contact/volunteer/</loc></url>
   <url><loc>https://example.org/donate/</loc></url>
+  <url><loc>https://example.org/events/</loc></url>
   <url><loc>https://example.org/get-involved/</loc></url>
   <url><loc>https://example.org/impact/</loc></url>
   <url><loc>https://example.org/our-story/</loc></url>
   <url><loc>https://example.org/partners/</loc></url>
+  <url><loc>https://example.org/press/</loc></url>
   <url><loc>https://example.org/privacy/</loc></url>
   <url><loc>https://example.org/programs/</loc></url>
 </urlset>

@@ -40,7 +40,6 @@
     }
 
     form.addEventListener('submit', function (e) {
-      if (form.getAttribute('data-live') !== 'true') { e.preventDefault(); return; }
       clearErrors();
       var errors = [];
       var values = {};
@@ -54,7 +53,18 @@
       if (meta.oneOf && meta.oneOf.every(function (n) { return !(values[n] || '').trim(); }) && !errors.some(function (x) { return x.f.n === meta.oneOf[0]; })) {
         errors.unshift({ f: { n: meta.oneOf[0] }, el: document.getElementById(id + '-' + meta.oneOf[0]), msg: 'Provide an email address or a phone number so we can reach you.' });
       }
-      if (!errors.length) return;
+      if (!errors.length) {
+        if (form.getAttribute('data-live') !== 'true') {
+          e.preventDefault();
+          var done = document.createElement('div');
+          done.className = 'notice-box'; done.id = 'preview-status'; done.setAttribute('role', 'status'); done.tabIndex = -1;
+          done.innerHTML = '<strong>Preview only.</strong> Your entries look good, but nothing was sent. To reach us now, email delane@delanesnails.com.';
+          var prev = form.querySelector('#preview-status');
+          if (prev) prev.parentNode.removeChild(prev);
+          form.appendChild(done); done.focus();
+        }
+        return;
+      }
       e.preventDefault();
 
       errors.forEach(function (x) {

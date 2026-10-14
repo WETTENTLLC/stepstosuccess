@@ -38,6 +38,7 @@ jobs:
       - name: Test suites (dev server, not deployed)
         run: |
           npm run seo
+          npm run test:worker
           npm run security
           npm run a11y
           node server.js & 

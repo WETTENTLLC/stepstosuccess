@@ -9,7 +9,7 @@ const ROOT = path.join(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
 const axeSrc = fs.readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
 const PORT = 4010, BASE = `http://127.0.0.1:${PORT}`;
-const PAGES = ['/', '/our-story/', '/programs/', '/impact/', '/get-involved/', '/donate/', '/partners/', '/contact/',
+const PAGES = ['/', '/our-story/', '/programs/', '/impact/', '/events/', '/press/', '/get-involved/', '/donate/', '/partners/', '/contact/',
   '/contact/message/', '/contact/scholarship-inquiry/', '/contact/volunteer/', '/contact/corporate/', '/contact/thanks/', '/privacy/', '/accessibility/'];
 let fails = 0, passes = 0;
 const ok = (c, m) => { c ? passes++ : fails++; if (!c || process.env.VERBOSE) console.log((c ? 'PASS ' : 'FAIL ') + m); };
@@ -53,8 +53,10 @@ const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-prac
 
     for (const p of PAGES.filter(x => /^\/contact\/[a-z-]+\/$/.test(x) && !/thanks/.test(x))) {
       await page.goto(BASE + p);
-      ok(await page.locator('form button[type=submit]').isDisabled(), `submit disabled while forms are unapproved ${p}`);
-      ok(await page.locator('.notice-box--off').count() === 1, `"not yet available" notice shown ${p}`);
+      await page.locator('form button[type=submit]').click();
+      ok(await page.locator('#error-summary').count() === 1, `empty submit shows accessible error summary ${p}`);
+      ok(await page.locator('form').getAttribute('data-live') === 'false', `form delivery is off ${p}`);
+      ok(await page.locator('.notice-box--off').count() === 1, `"preview only" notice shown ${p}`);
       ok(await page.locator('form').getAttribute('action') === '#', `form has no live endpoint ${p}`);
     }
     await page.goto(BASE + '/donate/');

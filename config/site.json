@@ -4,5 +4,6 @@
   "canonicalHost": "dnncstepstosuccess.com",
   "wwwBehavior": "redirect-to-apex",
   "domainOwnershipVerified": false,
-  "launchApproved": false
+  "launchApproved": false,
+  "contentApprovedByExecutiveDirector": false
 }

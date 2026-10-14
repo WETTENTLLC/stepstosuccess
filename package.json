@@ -16,7 +16,10 @@
     "build:prod": "node review/build-prod.js",
     "test:dist": "node review/dist.js",
     "launch-gate": "node review/launch-gate.js",
-    "smoke": "node review/smoke.js"
+    "smoke": "node review/smoke.js",
+    "test:worker": "node review/worker.mjs",
+    "preview": "node review/preview.js",
+    "screenshots": "node review/screenshots.js"
   },
   "devDependencies": {
     "axe-core": "^4.14.0",
